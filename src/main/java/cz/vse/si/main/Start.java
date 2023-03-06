@@ -12,7 +12,7 @@ import cz.vse.si.uiText.TextoveRozhrani;
  * @author    Jarmila Pavlíčková
  * @version   ZS 2016/2017
  */
-public class Start
+public class Start //ahoj vole
 {
     /***************************************************************************
      * Metoda, prostřednictvím níž se spouští celá aplikace.
