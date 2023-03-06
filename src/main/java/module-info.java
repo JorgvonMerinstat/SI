@@ -3,6 +3,6 @@ module cz.vse.si {
     requires javafx.fxml;
 
 
-    opens cz.vse.si to javafx.fxml;
-    exports cz.vse.si;
+    opens cz.vse.si.main to javafx.fxml;
+    exports cz.vse.si.main;
 }
