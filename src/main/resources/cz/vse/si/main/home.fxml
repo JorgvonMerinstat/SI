@@ -24,36 +24,27 @@
    <children>
       <MenuBar prefHeight="25.0" prefWidth="599.0" GridPane.columnSpan="2147483647">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Hra">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem onAction="#ukoncitHru" mnemonicParsing="false" text="Ukončit" />
             </items>
           </Menu>
         </menus>
+
       </MenuBar>
-      <TextArea fx:id="vystup" GridPane.rowIndex="1">
+      <TextArea fx:id="vystup" editable="false" GridPane.rowIndex="1">
           <padding>
               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
           </padding>
       </TextArea>
       <HBox spacing="10.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
          <children>
-            <TextField fx:id="vstup" onAction="#poslatVstup" HBox.hgrow="ALWAYS">
+            <TextField fx:id="vstup"  onAction="#poslatVstup" HBox.hgrow="ALWAYS">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </TextField>
-            <Button onAction="#poslatVstup" mnemonicParsing="false" text="Poslat">
+            <Button fx:id="tlacitkoPoslat" onAction="#poslatVstup" mnemonicParsing="false" text="Poslat">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>

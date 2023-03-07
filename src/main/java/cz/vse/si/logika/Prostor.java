@@ -117,7 +117,7 @@ public class Prostor {
      */
 
     public String dlouhyPopis() {
-        return "nacházíš se v " + popis + "\n" + "Položky: " + seznamPolozek() +"\n" + "Postava: " + seznamPostav() + "\n" + popisVychodu();
+        return "Nacházíš se v " + popis + "\n" + "Položky: " + seznamPolozek() +"\n" + "Postava: " + seznamPostav() + "\n" + popisVychodu();
     }
     /**
      * Vrací textový řetězec, který popisuje sousední východy, například:
