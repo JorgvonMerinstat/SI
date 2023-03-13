@@ -12,7 +12,7 @@ import java.util.Optional;
 public class HomeController {
 
     @FXML
-    private Button tlacitkoPoslat;
+    private Button tlacitkoPoslat;//zkouška pushe z nb
     @FXML
     private TextArea vystup;
     @FXML
