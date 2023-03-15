@@ -1,8 +1,14 @@
 package cz.vse.si.logika;
 
 
+import cz.vse.si.main.Pozorovatel;
+import cz.vse.si.main.PredmetPozorovani;
+
+
 import java.util.Dictionary;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Class HerniPlan - třída představující mapu a stav adventury.
@@ -11,7 +17,7 @@ import java.util.List;
  * propojuje je vzájemně pomocí východů
  * a pamatuje si aktuální prostor, ve kterém se hráč právě nachází.
  */
-public class HerniPlan {
+public class HerniPlan implements PredmetPozorovani {
 
     /**
      * zakládá proměnnou aktuální prostor
@@ -21,6 +27,7 @@ public class HerniPlan {
      * zakládá proměnnou výherní prostor
      */
     private Prostor vyherniProstor;
+    private Set<Pozorovatel> seznamPozorovatelu = new HashSet<>();
 
 
     /**
@@ -28,6 +35,8 @@ public class HerniPlan {
      */
 
     private Brasna brasna;
+
+
     /**
      *  Konstruktor který vytváří jednotlivé
      *  prostory a propojuje je pomocí východů.
@@ -126,6 +135,9 @@ public class HerniPlan {
 
     public void setAktualniProstor(Prostor prostor){
         aktualniProstor = prostor;
+        for (Pozorovatel pozorovatel : seznamPozorovatelu){
+            pozorovatel.aktualizuj();
+        }
     }
 
 
@@ -135,4 +147,8 @@ public class HerniPlan {
     public Brasna getBrasna(){return brasna;}
 
 
+    @Override
+    public void registruj(Pozorovatel pozorovatel) {
+        seznamPozorovatelu.add(pozorovatel);
+    }
 }

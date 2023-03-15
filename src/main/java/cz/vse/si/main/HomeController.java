@@ -12,7 +12,7 @@ import javafx.scene.control.*;
 
 import java.util.Optional;
 
-public class HomeController {
+public class HomeController implements Pozorovatel {
 
     @FXML
     private ListView panelVychodu;
@@ -31,6 +31,8 @@ public class HomeController {
         vystup.appendText(hra.vratUvitani() + "\n\n");
         Platform.runLater(() -> vstup.requestFocus());
         panelVychodu.setItems(seznamVychodu);
+        hra.getHerniPlan().registruj(this);
+        aktualizujSeznamVychodu();
 
     }
     @FXML
@@ -61,5 +63,10 @@ public class HomeController {
             Platform.exit();
         }
 
+    }
+
+    @Override
+    public void aktualizuj() {
+        aktualizujSeznamVychodu();
     }
 }
