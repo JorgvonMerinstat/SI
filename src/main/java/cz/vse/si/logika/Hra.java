@@ -1,4 +1,14 @@
 package cz.vse.si.logika;
+
+import cz.vse.si.main.Pozorovatel;
+import cz.vse.si.main.PredmetPozorovani;
+import cz.vse.si.main.ZmenaHry;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /**
  *  Třída Hra - třída představující logiku adventury.
  *
@@ -11,7 +21,7 @@ package cz.vse.si.logika;
  *  Také vyhodnocuje jednotlivé příkazy zadané uživatelem.
 
  */
-public class Hra implements IHra {
+public class Hra implements IHra{
 
     /**
      * obsahuje seznam přípustných příkazů
@@ -39,6 +49,7 @@ public class Hra implements IHra {
      *  Vytváří hru a inicializuje místnosti
      *  (prostřednictvím třídy HerniPlan) a seznam platných příkazů.
      */
+    private Map<ZmenaHry, Set<Pozorovatel>> seznamPozorovatelu = new HashMap<>();
 
     public Hra() {
        herniPlan = new HerniPlan();
@@ -51,6 +62,9 @@ public class Hra implements IHra {
        platnePrikazy.vlozPrikaz(new PrikazBrasna(herniPlan));
        platnePrikazy.vlozPrikaz(new PrikazPouzij(herniPlan, this));
        platnePrikazy.vlozPrikaz(new PrikazProstor(herniPlan));
+       for (ZmenaHry zmenaHry : ZmenaHry.values()){
+           seznamPozorovatelu.put(zmenaHry,new HashSet<>());
+       }
 
 
 
@@ -73,7 +87,10 @@ public class Hra implements IHra {
      *
      *  @param  konecHry  hodnota false= konec hry, true = hra pokračuje
      */
-    void setKonecHry(boolean konecHry){this.konecHry=konecHry;}
+    void setKonecHry(boolean konecHry){
+        this.konecHry=konecHry;
+        upozorniPozorovatele(ZmenaHry.KONEC_HRY);
+    }
     /**
      *  Vrátí úvodní zprávu pro hráče.
      */
@@ -122,4 +139,13 @@ public class Hra implements IHra {
     }
 
 
+    @Override
+    public void registruj(ZmenaHry zmenaHry, Pozorovatel pozorovatel) {
+        seznamPozorovatelu.get(zmenaHry).add(pozorovatel);
+    }
+    private void upozorniPozorovatele(ZmenaHry zmenaHry){
+        for (Pozorovatel pozorovatel : seznamPozorovatelu.get(zmenaHry)){
+            pozorovatel.aktualizuj();
+        }
+    }
 }

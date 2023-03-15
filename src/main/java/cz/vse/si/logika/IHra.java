@@ -3,8 +3,7 @@
 package cz.vse.si.logika;
 
 
-
-
+import cz.vse.si.main.PredmetPozorovani;
 
 /**
  *  Rozhraní které musí implementovat hra,
@@ -13,7 +12,7 @@ package cz.vse.si.logika;
  *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
  *@version    pro školní rok 2016/2017
  */
-public interface IHra
+public interface IHra extends PredmetPozorovani
 {
     //== VEŘEJNÉ KONSTANTY =====================================================
     //== DEKLAROVANÉ METODY ====================================================

@@ -3,12 +3,10 @@ package cz.vse.si.logika;
 
 import cz.vse.si.main.Pozorovatel;
 import cz.vse.si.main.PredmetPozorovani;
+import cz.vse.si.main.ZmenaHry;
 
 
-import java.util.Dictionary;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Class HerniPlan - třída představující mapu a stav adventury.
@@ -27,7 +25,7 @@ public class HerniPlan implements PredmetPozorovani {
      * zakládá proměnnou výherní prostor
      */
     private Prostor vyherniProstor;
-    private Set<Pozorovatel> seznamPozorovatelu = new HashSet<>();
+    private Map<ZmenaHry, Set<Pozorovatel>> seznamPozorovatelu = new HashMap<>();
 
 
     /**
@@ -45,6 +43,9 @@ public class HerniPlan implements PredmetPozorovani {
     public HerniPlan() {
         brasna = new Brasna(3);
         zalozProstorHry();
+        for (ZmenaHry zmenaHry : ZmenaHry.values()){
+            seznamPozorovatelu.put(zmenaHry, new HashSet<>());
+        }
     }
     /**
      *  Vytváří jednotlivé prostory a propojuje je pomocí východů.
@@ -135,7 +136,7 @@ public class HerniPlan implements PredmetPozorovani {
 
     public void setAktualniProstor(Prostor prostor){
         aktualniProstor = prostor;
-        upozorniPozorovatele();
+        upozorniPozorovatele(ZmenaHry.ZMENA_MISTNOSTI);
     }
 
 
@@ -146,11 +147,11 @@ public class HerniPlan implements PredmetPozorovani {
 
 
     @Override
-    public void registruj(Pozorovatel pozorovatel) {
-        seznamPozorovatelu.add(pozorovatel);
+    public void registruj(ZmenaHry zmenaHry, Pozorovatel pozorovatel) {
+        seznamPozorovatelu.get(zmenaHry).add(pozorovatel);
     }
-    private void upozorniPozorovatele(){
-        for (Pozorovatel pozorovatel : seznamPozorovatelu){
+    private void upozorniPozorovatele(ZmenaHry zmenaHry){
+        for (Pozorovatel pozorovatel : seznamPozorovatelu.get(zmenaHry)){
             pozorovatel.aktualizuj();
         }
     }
