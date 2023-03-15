@@ -135,9 +135,7 @@ public class HerniPlan implements PredmetPozorovani {
 
     public void setAktualniProstor(Prostor prostor){
         aktualniProstor = prostor;
-        for (Pozorovatel pozorovatel : seznamPozorovatelu){
-            pozorovatel.aktualizuj();
-        }
+        upozorniPozorovatele();
     }
 
 
@@ -150,5 +148,10 @@ public class HerniPlan implements PredmetPozorovani {
     @Override
     public void registruj(Pozorovatel pozorovatel) {
         seznamPozorovatelu.add(pozorovatel);
+    }
+    private void upozorniPozorovatele(){
+        for (Pozorovatel pozorovatel : seznamPozorovatelu){
+            pozorovatel.aktualizuj();
+        }
     }
 }

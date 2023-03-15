@@ -9,7 +9,7 @@ public class PrikazJdi implements IPrikaz {
      * příkaz jdi se volá klíčovým slovem "jdi"
      */
 
-    private static final String NAZEV = "jdi";
+    public static final String NAZEV = "jdi";
     /**
      * nastavuje proměnnou hra
      */
