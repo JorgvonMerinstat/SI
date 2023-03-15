@@ -260,7 +260,7 @@ public class Prostor {
     }
     /**
      * vyndání postavy z prostoru
-     * @param jmenoPolozky
+     * @param
      * @return
      */
     public Postava vyberPostavu(String jmenoPostavy) {
@@ -279,8 +279,8 @@ public class Prostor {
     return vybranaPostava;
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        return getJmeno();
+    }
 }

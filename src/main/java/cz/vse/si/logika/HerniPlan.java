@@ -124,7 +124,9 @@ public class HerniPlan {
      *@param  prostor nový aktuální prostor
      */
 
-    public void setAktualniProstor(Prostor prostor){aktualniProstor = prostor;}
+    public void setAktualniProstor(Prostor prostor){
+        aktualniProstor = prostor;
+    }
 
 
 
