@@ -25,7 +25,7 @@
   <rowConstraints>
     <RowConstraints valignment="CENTER" vgrow="NEVER" />
       <RowConstraints valignment="CENTER" vgrow="NEVER" />
-    <RowConstraints vgrow="ALWAYS" />
+    <RowConstraints prefHeight="1.0" vgrow="SOMETIMES" />
     <RowConstraints vgrow="NEVER" />
   </rowConstraints>
    <children>
@@ -76,12 +76,12 @@
                <children>
                   <Pane>
                      <children>
-                        <ImageView fitHeight="392.0" fitWidth="788.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="422.0" fitWidth="732.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@prostory/herniPlan.PNG" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="67.0" fitWidth="82.0" layoutX="161.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="hrac" fitHeight="67.0" fitWidth="82.0" layoutX="161.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Kacerhagen.png" />
                            </image>
