@@ -10,9 +10,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,6 +50,7 @@ public class HomeController {
         hra.registruj(ZmenaHry.KONEC_HRY, () -> aktualizujKonecHry());
         aktualizujSeznamVychodu();
         vlozSouradnice();
+        panelVychodu.setCellFactory(param -> new ListCellProstor());
     }
 
     private void vlozSouradnice() {
@@ -115,7 +119,15 @@ public class HomeController {
     public void klikPanelVychodu(MouseEvent mouseEvent) {
         Prostor cil = panelVychodu.getSelectionModel().getSelectedItem();
         if (cil==null) return;
-        String prikaz = PrikazJdi.NAZEV +" "+ cil;
+        String prikaz = PrikazJdi.NAZEV +" "+ cil.getJmeno();
         zpracujPrikaz(prikaz);
+    }
+    @FXML
+    private void napovedaKlik(ActionEvent actionEvent) {
+        Stage napovedaStage = new Stage();
+        WebView wv = new WebView();
+        Scene napovedaScena = new Scene(new Button());
+        napovedaStage.setScene(napovedaScena);
+        napovedaStage.show();
     }
 }

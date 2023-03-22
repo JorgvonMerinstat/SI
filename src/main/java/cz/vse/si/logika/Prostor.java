@@ -279,8 +279,5 @@ public class Prostor {
     return vybranaPostava;
     }
 
-    @Override
-    public String toString() {
-        return getJmeno();
-    }
+
 }
