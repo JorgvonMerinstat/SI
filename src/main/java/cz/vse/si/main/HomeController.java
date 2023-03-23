@@ -147,7 +147,13 @@ public class HomeController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Opravdu chceš opakovat hru?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
+        vystup.clear();
         System.out.println("Opakuji hru");
+        hra = new Hra();
+        initialize();
+        aktualizujPolohuHrace();
+
+
         } else {System.out.println("Neopakuji hru");}
 
     }
