@@ -1,9 +1,6 @@
 package cz.vse.si.main;
 
-import cz.vse.si.logika.Hra;
-import cz.vse.si.logika.IHra;
-import cz.vse.si.logika.PrikazJdi;
-import cz.vse.si.logika.Prostor;
+import cz.vse.si.logika.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,9 +15,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class HomeController {
 
@@ -28,6 +23,8 @@ public class HomeController {
     private ImageView hrac;
     @FXML
     private ListView<Prostor> panelVychodu;
+    @FXML
+    private ListView<Polozka> panelBrasny;
     @FXML
     private Button tlacitkoPoslat;//zkouška pushe z nb
     @FXML
@@ -37,19 +34,23 @@ public class HomeController {
 
     private IHra hra = new Hra();
 
+
     private ObservableList<Prostor> seznamVychodu = FXCollections.observableArrayList();
+    private ObservableList<Polozka> obsahBrasny = FXCollections.observableArrayList();
     private Map<String, Point2D> souradniceProstoru = new HashMap<>();
     @FXML
     private void initialize(){
         vystup.appendText(hra.vratUvitani() + "\n\n");
         Platform.runLater(() -> vstup.requestFocus());
         panelVychodu.setItems(seznamVychodu);
+       panelBrasny.setItems(obsahBrasny);
         hra.getHerniPlan().registruj(ZmenaHry.ZMENA_MISTNOSTI, () -> {
             aktualizujSeznamVychodu();
             aktualizujPolohuHrace();
         });
         hra.registruj(ZmenaHry.KONEC_HRY, () -> aktualizujKonecHry());
         aktualizujSeznamVychodu();
+        akualizujObsahBrasny();
         vlozSouradnice();
         panelVychodu.setCellFactory(param -> new ListCellProstor());
     }
@@ -68,6 +69,11 @@ public class HomeController {
     private void aktualizujSeznamVychodu(){
         seznamVychodu.clear();
         seznamVychodu.addAll(hra.getHerniPlan().getAktualniProstor().getVychody());
+    }
+    private void akualizujObsahBrasny(){
+        obsahBrasny.clear();
+        obsahBrasny.addAll(hra.getHerniPlan().getBrasna().getSeznamPolozek());
+
     }
     private void aktualizujPolohuHrace(){
         String prostor = hra.getHerniPlan().getAktualniProstor().getJmeno();
@@ -92,6 +98,7 @@ public class HomeController {
         String prikaz = vstup.getText();
         vstup.clear();
         zpracujPrikaz(prikaz);
+        akualizujObsahBrasny();
     }
 
     private void zpracujPrikaz(String prikaz) {
@@ -122,6 +129,7 @@ public class HomeController {
         if (cil==null) return;
         String prikaz = PrikazJdi.NAZEV +" "+ cil.getJmeno();
         zpracujPrikaz(prikaz);
+        akualizujObsahBrasny();
     }
     @FXML
     private void napovedaKlik(ActionEvent actionEvent) {
@@ -131,5 +139,18 @@ public class HomeController {
         napovedaStage.setScene(napovedaScena);
         napovedaStage.show();
         wv.getEngine().load(getClass().getResource("napoveda.html").toExternalForm());
+        //wv.getEngine().load("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+    }
+    @FXML
+    private void opakovatHru(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Opravdu chceš opakovat hru?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK){
+        System.out.println("Opakuji hru");
+
+
+
+        }
     }
 }

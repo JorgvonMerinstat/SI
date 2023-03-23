@@ -1,5 +1,7 @@
 package cz.vse.si.logika;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -85,5 +87,8 @@ public class Brasna {
             seznam.append(neco.getJmeno()).append(" ");
         }
         return seznam.toString();
+    }
+    public Collection<Polozka> getSeznamPolozek() {
+        return obsahBrasny;
     }
 }

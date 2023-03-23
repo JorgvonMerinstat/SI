@@ -3,7 +3,7 @@ package cz.vse.si.logika;
 /**
  * Zakládá třídu položka, která určuje parametry každé položky
  */
-public class Polozka {
+public class Polozka{
     /**
      * jméno položky
      */
@@ -59,4 +59,8 @@ public class Polozka {
      * @return true, pokud je věc přenositelná, jinak false
      */
     public boolean muzuPrenest(){return lzePrenest;}
+    @Override
+    public String toString(){
+     return jmeno;
+    }
 }
