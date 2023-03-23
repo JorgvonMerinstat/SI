@@ -148,9 +148,7 @@ public class HomeController {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
         System.out.println("Opakuji hru");
+        } else {System.out.println("Neopakuji hru");}
 
-
-
-        }
     }
 }
