@@ -152,6 +152,7 @@ public class HomeController {
         hra = new Hra();
         initialize();
         aktualizujPolohuHrace();
+        aktualizujKonecHry();
 
 
         } else {System.out.println("Neopakuji hru");}
