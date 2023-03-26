@@ -43,7 +43,7 @@ public class HomeController {
         vystup.appendText(hra.vratUvitani() + "\n\n");
         Platform.runLater(() -> vstup.requestFocus());
         panelVychodu.setItems(seznamVychodu);
-       panelBrasny.setItems(obsahBrasny);
+        panelBrasny.setItems(obsahBrasny);
         hra.getHerniPlan().registruj(ZmenaHry.ZMENA_MISTNOSTI, () -> {
             aktualizujSeznamVychodu();
             aktualizujPolohuHrace();
@@ -144,15 +144,15 @@ public class HomeController {
     }
     @FXML
     private void opakovatHru(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Opravdu chceš opakovat hru?");
-        Optional<ButtonType> result = alert.showAndWait();
+        Alert opakovat = new Alert(Alert.AlertType.CONFIRMATION, "Opravdu chceš opakovat hru?");
+        Optional<ButtonType> result = opakovat.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
-        vystup.clear();
-        System.out.println("Opakuji hru");
-        hra = new Hra();
-        initialize();
-        aktualizujPolohuHrace();
-        aktualizujKonecHry();
+            vystup.clear();
+            System.out.println("Opakuji hru");
+            hra = new Hra();
+            initialize();
+            aktualizujPolohuHrace();
+            aktualizujKonecHry();
 
 
         } else {System.out.println("Neopakuji hru");}

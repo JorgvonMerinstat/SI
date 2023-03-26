@@ -46,7 +46,7 @@ public class PrikazPouzij implements IPrikaz{
 
         switch (nazevPouziteho){
             case "pistole":
-                   if (plan.getBrasna().obsahujePolozku("náboje")) {
+                   if (plan.getBrasna().obsahujePolozku("naboje")) {
                        if (plan.getAktualniProstor().obsahujePostavu(nazevUziteho)) {
                            plan.getAktualniProstor().vyberPostavu(nazevUziteho);
                            return "Zabil jsi " + nazevUziteho;
@@ -55,7 +55,7 @@ public class PrikazPouzij implements IPrikaz{
 
                    break;
             case "kalich":
-                  if (plan.getAktualniProstor().obsahujePostavu("Nováček")){
+                  if (plan.getAktualniProstor().obsahujePostavu("Novacek")){
                       plan.getBrasna().vyndejZBrasny("kalich");
 
                       hra.setKonecHry(true);

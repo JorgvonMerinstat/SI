@@ -44,7 +44,7 @@ public class Hra implements IHra{
      * ukládá epilog
      */
 
-    private String epilog = "Děkuji, že jste si zahráli textovou hru Hagen.";
+    private String epilog = "Děkuji, že jste si zahráli textovou hru Hagen. ";
     /**
      *  Vytváří hru a inicializuje místnosti
      *  (prostřednictvím třídy HerniPlan) a seznam platných příkazů.
@@ -98,7 +98,7 @@ public class Hra implements IHra{
         return "Vítejte!\n" +
                 "V tomto příběhu se vžijete do role důstojníka wehrmachtu Hanse Hagena, " +
                 "který na konci 2. sv. války zůstal na území českého krasu.\n" +
-                "Napište 'pomoc', pokud si nevíte rady, jak hrát dál.\n" +
+                "Napište 'pomoc', pokud si nevíte rady, jak hrát dál. \n" +
                 "\n" +
                 herniPlan.getAktualniProstor().dlouhyPopis();
     }
