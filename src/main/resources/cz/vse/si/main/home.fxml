@@ -96,7 +96,7 @@
       </TitledPane>
       <TitledPane animated="true" text="Brašna" GridPane.rowIndex="1">
          <content>
-            <ListView fx:id="panelBrasny" maxHeight="75.0" />
+            <ListView fx:id="panelBrasny" maxHeight="95.0" />
          </content>
       </TitledPane>
    </children>

@@ -57,6 +57,7 @@ public class HomeController {
         akualizujObsahBrasny();
         vlozSouradnice();
         panelVychodu.setCellFactory(param -> new ListCellProstor());
+        panelBrasny.setCellFactory(param -> new ListCellBrasna());
     }
 
     private void vlozSouradnice() {
