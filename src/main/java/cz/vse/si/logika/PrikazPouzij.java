@@ -1,7 +1,7 @@
 package cz.vse.si.logika;
 
 /**
- * Zde se nachází struktura příkazu použij, který zároveň ukončuje hru.
+ * Zde se nachazi struktura prikazu pouzij, ktery zaroven ukoncuje hru.
  */
 public class PrikazPouzij implements IPrikaz{
     /**

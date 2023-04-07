@@ -54,7 +54,7 @@ public class HerniPlan implements PredmetPozorovani {
     private void zalozProstorHry(){
         Prostor velitelstvi = new Prostor("velitelstvi", "Velitelství Wehrmachtu na hradě Karlštejn, kde sedí skupina velitelů a baví se jejich situaci. \n" +
                 "Vzhledem k tomu, že rudá armáda rychle postupuje z východu, není jiná možnsot, než ukončit své životy dřív, než padneme do rukou těch ruských bestií.\n" +
-                "Tvoje zbraň ale selže a zůstaneš jediný naživu, jen nemáš náboje.");
+                "Tvoje zbran ale selze a zustanes jediny nazivu, jen nemas naboje.");
         Prostor krizovatkaPodKarlstejnem = new Prostor("krizovatka", "Křižovatka silnic pod hradem Karlštejn");
         Prostor lesackaChatka = new Prostor("hajenka","Lesácká chatka, ve které spí lesák");
         Prostor morinka = new Prostor("Morinka","Obec Mořinka, ve které se nachází známý kolaborant Nováček.");

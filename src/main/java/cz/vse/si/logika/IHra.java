@@ -1,21 +1,21 @@
 /* Soubor je ulozen v kodovani UTF-8.
- * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
+ * Kontrola kodování: Prilis zluťoucky kun úpěl ďábelské ódy. */
 package cz.vse.si.logika;
 
 
 import cz.vse.si.main.PredmetPozorovani;
 
 /**
- *  Rozhraní které musí implementovat hra,
- *  je na ně navázáno uživatelské rozhraní
+ *  Rozhrani ktere musi implementovat hra,
+ *  je na ne navazano uzivatelské rozhrani
  *
  *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
  *@version    pro školní rok 2016/2017
  */
 public interface IHra extends PredmetPozorovani
 {
-    //== VEŘEJNÉ KONSTANTY =====================================================
-    //== DEKLAROVANÉ METODY ====================================================
+    //== VEREJNE KONSTANTY =====================================================
+    //== DEKLAROVANE METODY ====================================================
     /**
      *  Vrátí úvodní zprávu pro hráče.
      *

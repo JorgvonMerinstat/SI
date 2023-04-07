@@ -38,8 +38,8 @@ public class Prostor {
      */
     private List<Postava> seznamPostav;
     /**
-     * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
-     * před domem"
+     * Vytvoreni prostoru se zadanym popisem, napr. "kuchyn", "hala", "travnik
+     * pred domem"
      *
      * @param jmeno jméno prostoru, jednoznačný identifikátor, jedno slovo nebo
      * víceslovný název bez mezer.

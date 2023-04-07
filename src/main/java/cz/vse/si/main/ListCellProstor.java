@@ -4,6 +4,9 @@ import cz.vse.si.logika.Prostor;
 import javafx.scene.control.ListCell;
 import javafx.scene.image.ImageView;
 
+/**
+ * třída, která zajišťuje funkci obrázkového zobrazení východů v panelu východů
+ */
 public class ListCellProstor extends ListCell<Prostor> {
     @Override
     protected void updateItem(Prostor prostor, boolean empty) {

@@ -17,6 +17,10 @@ import javafx.util.Callback;
 
 import java.util.*;
 
+/**
+* Třída, která ovládá celé rozhraní Javafx
+*/
+
 public class HomeController {
 
    @FXML
@@ -109,6 +113,10 @@ public class HomeController {
 
 
     }
+    /**
+     * metoda, která zajišťuje ukončení hry po stisknutí Ukočit hru
+     * @return ukoni hru
+     */
 
     public void ukoncitHru(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Opravdu chceš ukončit hru?");
@@ -122,7 +130,10 @@ public class HomeController {
 
 
 
-
+    /**
+     * metoda, zajišťující možnost ovládat příkaz jdi pomocí kliknutí na panel východů.
+     * @return zaznamená se kliknutí na panel východů
+     */
     @FXML
     public void klikPanelVychodu(MouseEvent mouseEvent) {
         Prostor cil = panelVychodu.getSelectionModel().getSelectedItem();

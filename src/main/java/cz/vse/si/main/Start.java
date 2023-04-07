@@ -1,5 +1,4 @@
-/* Soubor je ulozen v kodovani UTF-8.
- * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
+/* Soubor je ulozen v kodovani UTF-8. */
 package cz.vse.si.main;
 
 import cz.vse.si.logika.*;

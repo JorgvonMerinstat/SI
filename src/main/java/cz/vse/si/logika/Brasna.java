@@ -52,6 +52,7 @@ public class Brasna {
      * zde vyndaváme položky z brašny
      *
      * @param jmeno udává co chceme vzít
+     * @return
      */
     public Polozka vyndejZBrasny(String jmeno){
         for (Polozka neco: obsahBrasny){
