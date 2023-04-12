@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"cz.vse.si","l":"cz.vse.si.logika"},{"m":"cz.vse.si","l":"cz.vse.si.main"},{"m":"cz.vse.si","l":"cz.vse.si.uiText"}];updateSearchResults();
